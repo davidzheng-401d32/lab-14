@@ -25,6 +25,38 @@ authRouter.post('/signin', auth(), (req, res, next) => {
   res.send(req.token);
 });
 
+authRouter.get('/public-stuff', (req, res) => {
+  res.send('anybody can see this');
+});
+
+authRouter.get('/hidden-stuff', auth(), (req, res) => {
+  res.send('this is for users who are logged in');
+});
+
+authRouter.get('/something-to-read', auth('read'), (req, res) => {
+  res.send('you can read!');
+});
+
+authRouter.get('/create-a-thing', auth('create'), (req, res) => {
+  res.send('you can make things');
+});
+
+authRouter.get('/update', auth('update'), (req, res) => {
+  res.send('you can update it');
+});
+
+authRouter.get('/jp', auth('update'), (req, res) => {
+  res.send('update more');
+});
+
+authRouter.get('/bye-bye', auth('delete'), (req, res) => {
+  res.send('you can delete it');
+});
+
+authRouter.get('/everything', auth('superuser'), (req, res) => {
+  res.send('super user');
+});
+
 authRouter.get('/oauth', (req,res,next) => {
   oauth.authorize(req)
     .then( token => {
