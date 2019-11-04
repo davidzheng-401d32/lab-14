@@ -4,8 +4,10 @@ const express = require('express');
 const authRouter = express.Router();
 
 const User = require('./users-model.js');
+const Roles = require('./roles-model.js');
 const auth = require('./middleware.js');
 const oauth = require('./oauth/google.js');
+
 
 authRouter.post('/signup', (req, res, next) => {
   let user = new User(req.body);
@@ -23,6 +25,19 @@ authRouter.post('/signup', (req, res, next) => {
 authRouter.post('/signin', auth(), (req, res, next) => {
   res.cookie('auth', req.token);
   res.send(req.token);
+});
+
+
+//----------------------------making a post route for Roles---------------//
+authRouter.post('/roles', (req, res) => {
+  try {
+    let role = new Roles(req.body);
+    role.save();
+    res.send(role);
+  }
+  catch (e){
+    res.send('oh no');
+  }
 });
 
 authRouter.get('/public-stuff', (req, res) => {
