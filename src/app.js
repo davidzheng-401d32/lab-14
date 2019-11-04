@@ -27,6 +27,10 @@ app.use(authRouter);
 app.use(notFound);
 app.use(errorHandler);
 
+// JSDOC
+app.use('/docs', express.static('docs'));
+
+
 module.exports = {
   server: app,
   start: (port) => {

@@ -28,7 +28,11 @@ authRouter.post('/signin', auth(), (req, res, next) => {
 });
 
 
-//----------------------------making a post route for Roles---------------//
+/**
+ * POST route for roles.
+ * 
+ * 
+ */
 authRouter.post('/roles', (req, res) => {
   try {
     let role = new Roles(req.body);
@@ -40,6 +44,10 @@ authRouter.post('/roles', (req, res) => {
   }
 });
 
+/**
+ * GET Route /public-stuff
+ * @return 'anybody can see this' message.
+ */
 authRouter.get('/public-stuff', (req, res) => {
   res.send('anybody can see this');
 });

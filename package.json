@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint '**/*.js' --fix",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
     "start": "node index.js",
     "watch": "nodemon index.js",
     "test-watch": "jest --watchAll",
@@ -24,6 +25,7 @@
     "eslint": "^6.6.0",
     "express": "^4.16.3",
     "jest": "^24.8.0",
+    "jsdoc": "^3.6.3",
     "jsonwebtoken": "^8.4.0",
     "mongodb-memory-server": "^5.1.4",
     "mongoose": "^5.3.13",
