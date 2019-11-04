@@ -7,12 +7,9 @@
 ### Links and Resources
 * [submission PR](https://github.com/davidzheng-401d32/lab-14/pull/1)
 * [travis](https://travis-ci.com/davidzheng-401d32/lab-14)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
-
+* [back-end](https://davidzheng-lab14.herokuapp.com) 
 #### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
+* [jsdoc](https://davidzheng-lab14.herokuapp.com/docs) (Server assignments)
 
 
 ### Setup
@@ -22,15 +19,11 @@
 * `SECRET`
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+* `npm start`.
   
 #### Tests
 * lint test: `npm run lint`
 * unit test: `npm test`
 
 #### UML
-Link to an image of the UML for your application and response to events
+![Access Control](lab-14.JPG)
